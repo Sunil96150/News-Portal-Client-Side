@@ -72,10 +72,10 @@ const SeeUsers = () => {
                 <td>{user.email}</td>
                 <td>{user.createAt}</td>
                 <td>{user.lastLogInTime}</td>
-                <td><button className="btn btn-neutral">Update</button>
+                <td>
                 <button
                      onClick={() => hendelUserDelete(user._id)}
-                className="btn btn-warning mt-2 sm:mt-0 ml-2">X</button></td>
+                className="btn btn-warning mt-2 sm:mt-0 ml-2">Delete</button></td>
                 
               </tr>)
         }
