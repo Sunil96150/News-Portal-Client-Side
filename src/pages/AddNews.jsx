@@ -9,10 +9,10 @@ const AddNews = () => {
         const newsData = Object.fromEntries(formData);
         
         console.log("Submitted News:", newsData);
-        
+
         //sent to data at mongodb
 
-        fetch('http://localhost:5000/news', {
+        fetch('https://newspaper-server-delta.vercel.app/news', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

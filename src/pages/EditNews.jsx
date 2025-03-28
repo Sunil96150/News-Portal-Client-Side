@@ -39,7 +39,7 @@ const EditNews = () => {
         
         console.log('Form Data:', formData);
 
-         fetch(`http://localhost:5000/news/${newsItem._id}`, {
+         fetch(`https://newspaper-server-delta.vercel.app/news/${newsItem._id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

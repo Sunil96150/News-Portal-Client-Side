@@ -35,12 +35,12 @@ const router = createBrowserRouter([
       {
         path:'/',
         element: <Home></Home>,
-        loader: ()=> fetch('http://localhost:5000/news'),
+        loader: ()=> fetch('https://newspaper-server-delta.vercel.app/news'),
       },
       {
         path: '/news',
         element:<PrivateRoute><News></News></PrivateRoute>,
-        loader: ()=> fetch('http://localhost:5000/news'),
+        loader: ()=> fetch('https://newspaper-server-delta.vercel.app/news'),
       },
       {
         path: '/about',
@@ -61,12 +61,12 @@ const router = createBrowserRouter([
       {
         path: '/readmore/:id',
         element:<PrivateRoute><ReadMore></ReadMore></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`),
+        loader: ({params}) => fetch(`https://newspaper-server-delta.vercel.app/news/${params.id}`),
       },
       {
         path: '/edit/:id',
         element: <EditNews></EditNews>,
-        loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`),
+        loader: ({params}) => fetch(`https://newspaper-server-delta.vercel.app/news/${params.id}`),
       },
       ,{
         path: '/dashboard',
@@ -96,7 +96,7 @@ const router = createBrowserRouter([
       {
         path: '/seeusers',
         element:<PrivateRoute> <SeeUsers></SeeUsers></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/newsUser')
+        loader: () => fetch('https://newspaper-server-delta.vercel.app/newsUser')
       }
     ],
   },

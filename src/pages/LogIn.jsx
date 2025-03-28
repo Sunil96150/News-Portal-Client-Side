@@ -36,7 +36,7 @@ const Login = () => {
 
                 const updatedInfo = {email , lastLogInTime}
 
-                fetch(`http://localhost:5000/newsUser` , {
+                fetch(`https://newspaper-server-delta.vercel.app/newsUser` , {
                     method: 'PATCH',
                     headers: {
                         'content-type' : 'application/json'

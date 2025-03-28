@@ -22,7 +22,7 @@ const SeeUsers = () => {
                     if (result.isConfirmed) {
                     
         
-                    fetch(`http://localhost:5000/newsUser/${id}` ,{
+                    fetch(`https://newspaper-server-delta.vercel.app/newsUser/${id}` ,{
                         method: 'DELETE'
                     })
                     .then(res => res.json())

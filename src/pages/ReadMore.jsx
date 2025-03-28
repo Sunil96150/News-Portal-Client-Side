@@ -21,7 +21,7 @@ const ReadMore = () => {
             if (result.isConfirmed) {
             
 
-            fetch(`http://localhost:5000/news/${_id}` ,{
+            fetch(`https://newspaper-server-delta.vercel.app/news/${_id}` ,{
                 method: 'DELETE'
             })
             .then(res => res.json())
