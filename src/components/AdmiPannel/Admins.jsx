@@ -23,7 +23,7 @@ const Admins = () => {
 
   }).then(result => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:5000/newsUser/${id}`, {
+      fetch(`https://news-server-protal.vercel.app/newsUser/${id}`, {
         method: "PATCH",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ role: newRole })
@@ -67,7 +67,7 @@ const Admins = () => {
                     if (result.isConfirmed) {
                     
         
-                    fetch(`http://localhost:5000/newsUser/${id}` ,{
+                    fetch(`https://news-server-protal.vercel.app/newsUser/${id}` ,{
                         method: 'DELETE'
                     })
                     .then(res => res.json())

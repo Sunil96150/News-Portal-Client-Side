@@ -39,7 +39,7 @@ const Register = () => {
 
                 //send user in database
 
-                fetch('http://localhost:5000/newsUser' , {
+                fetch('https://news-server-protal.vercel.app/newsUser' , {
                     method: 'POST',
                     headers: {
                         'content-type' : 'application/json' 
