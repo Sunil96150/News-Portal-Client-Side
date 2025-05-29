@@ -36,7 +36,7 @@ const Login = () => {
 
                 const updatedInfo = {email , lastLogInTime}
 
-                fetch(`https://newspaper-server-delta.vercel.app/newsUser` , {
+                fetch(`http://localhost:5000/newsUser` , {
                     method: 'PATCH',
                     headers: {
                         'content-type' : 'application/json'
@@ -90,7 +90,7 @@ const Login = () => {
                             </div>
                             <button className="btn btn-neutral mt-4">Log In</button>
                             <SocialLogIn />
-                            <p>See all jobs: <Link className="text-red-600" to="/register">Register</Link></p>
+                            <p className='text-2xl py-2'>See all jobs: <Link className="text-red-600" to="/register">Register</Link></p>
                         </fieldset>
                     </form>
                 </div>

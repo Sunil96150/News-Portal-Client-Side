@@ -24,6 +24,9 @@ import Login from './pages/LogIn.jsx';
 import Register from './pages/Register.jsx';
 import SeeUsers from './pages/SeeUsers.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
+import Admins from './components/AdmiPannel/Admins.jsx';
+
+
 
 
 const router = createBrowserRouter([
@@ -35,12 +38,12 @@ const router = createBrowserRouter([
       {
         path:'/',
         element: <Home></Home>,
-        loader: ()=> fetch('https://newspaper-server-delta.vercel.app/news'),
+        loader: ()=> fetch('http://localhost:5000/news'),
       },
       {
         path: '/news',
         element:<PrivateRoute><News></News></PrivateRoute>,
-        loader: ()=> fetch('https://newspaper-server-delta.vercel.app/news'),
+        loader: ()=> fetch('http://localhost:5000/news'),
       },
       {
         path: '/about',
@@ -61,14 +64,14 @@ const router = createBrowserRouter([
       {
         path: '/readmore/:id',
         element:<PrivateRoute><ReadMore></ReadMore></PrivateRoute>,
-        loader: ({params}) => fetch(`https://newspaper-server-delta.vercel.app/news/${params.id}`),
+        loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`),
       },
       {
         path: '/edit/:id',
         element: <EditNews></EditNews>,
-        loader: ({params}) => fetch(`https://newspaper-server-delta.vercel.app/news/${params.id}`),
+        loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`),
       },
-      ,{
+      {
         path: '/dashboard',
         element: <Dashboard></Dashboard>
       },
@@ -83,7 +86,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/usermanagement',
-        element: <UserManagement></UserManagement>
+        element: <UserManagement></UserManagement>,
+        loader: () => fetch('http://localhost:5000/newsUser')
       },
       {
         path: '/login',
@@ -93,13 +97,22 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>
       },
-      {
+       {
         path: '/seeusers',
         element:<PrivateRoute> <SeeUsers></SeeUsers></PrivateRoute>,
-        loader: () => fetch('https://newspaper-server-delta.vercel.app/newsUser')
+        loader: () => fetch('http://localhost:5000/newsUser')
       }
+     
     ],
   },
+  {
+  path: "/admins",
+  element: <Admins></Admins>,
+  loader: () => fetch('http://localhost:5000/newsUser?role=admin')
+},
+{   
+   loader: () => fetch('http://localhost:5000/newsUser')
+}
 ]);
 
 createRoot(document.getElementById('root')).render(

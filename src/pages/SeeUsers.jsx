@@ -22,7 +22,7 @@ const SeeUsers = () => {
                     if (result.isConfirmed) {
                     
         
-                    fetch(`https://newspaper-server-delta.vercel.app/newsUser/${id}` ,{
+                    fetch(`http://localhost:5000/newsUser/${id}` ,{
                         method: 'DELETE'
                     })
                     .then(res => res.json())
@@ -43,9 +43,15 @@ const SeeUsers = () => {
 
     }
     return (
-        
-           
-        <div className="overflow-x-auto">
+      
+        // <div className='flex'>
+        //    <div className='w-64 min-h-full bg-orange-400'> 
+        //     <ul className='manu'>
+        //         <li><NavLink to ='/seeusers'>All Users</NavLink></li>
+
+        //     </ul>
+        //    </div>
+        <div className="flex-1 overflow-x-auto">
 
         <h2 className="text-5xl text-center my-5 text-gray-500 font-bold">See All Users: {users.length}</h2>
 
@@ -83,6 +89,7 @@ const SeeUsers = () => {
     </tbody>
   </table>
 </div>
+// </div>
 
 
     );

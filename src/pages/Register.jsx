@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import AuthContext from './Provider/AuthContext';
+import SocialLogIn from './SocialLogIn';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -38,7 +39,7 @@ const Register = () => {
 
                 //send user in database
 
-                fetch('https://newspaper-server-delta.vercel.app/newsUser' , {
+                fetch('http://localhost:5000/newsUser' , {
                     method: 'POST',
                     headers: {
                         'content-type' : 'application/json' 
@@ -97,7 +98,8 @@ const Register = () => {
                             <input type="password" className="input" name="password" placeholder="Password" required />
                             <div><a className="link link-hover">Forgot password?</a></div>
                             <button className="btn btn-neutral mt-4">Register</button>
-                            <p>See all Campaigns: <Link className="text-red-600" to="/login">Log in</Link></p>
+                            <SocialLogIn></SocialLogIn>
+                            <p className='text-2xl py-2'>See all Campaigns: <Link className="text-red-600 text-2xl py-2" to="/login">Log in</Link></p>
                         </fieldset>
                     </form>
                 </div>
