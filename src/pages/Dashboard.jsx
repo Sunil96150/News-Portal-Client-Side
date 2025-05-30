@@ -1,5 +1,5 @@
 import React from 'react';
-import SubscriptionDashboard from './SubscriptionOverview';
+import SubscriptionDashboard from './SubscriptionDashboard';
 import NewsStatistics from './NewsStatistics';
 import FAQ from './Provider/FAQ';
 

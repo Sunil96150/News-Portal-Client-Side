@@ -61,24 +61,25 @@ const SubscriptionDashboard = () => {
   };
 
   return (
-    <div className="">
-      <h2 className="text-3xl font-extrabold my-5 md:my-10 text-center mb-8">Choose Your Subscription</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="container mx-auto px-4 py-10">
+      <h2 className="text-3xl font-extrabold text-center mb-10">Choose Your Subscription</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-stretch">
         {subscriptions.map((subscription) => (
           <div
             key={subscription.id}
-            className="card w-80 bg-base-100 shadow-xl cursor-pointer hover:shadow-2xl transition-all rounded-lg border border-red-500"
+            className="card h-full bg-base-100 shadow-xl hover:shadow-2xl transition-all rounded-lg border border-red-500 flex flex-col justify-between"
           >
-            <div className="card-body text-center">
-              <h3 className="card-title text-xl font-bold">{subscription.type}</h3>
-              <p className="text-md text-gray-600 text-2xl font-extrabold">{subscription.price}</p>
-              <p className="text-sm text-gray-500 mb-4">{subscription.description}</p>
-              <ul className="text-sm text-gray-500 list-inside list-disc space-y-2 text-left p-4 border border-gray-300 rounded-lg">
-                {subscription.features.map((feature, index) => (
-                  <li key={index} className="ml-2"> {feature}</li>
-                ))}
-              </ul>
-              {/* Subscribe Now Button */}
+            <div className="card-body text-center flex flex-col justify-between">
+              <div>
+                <h3 className="card-title text-xl font-bold">{subscription.type}</h3>
+                <p className="text-md text-gray-600 text-2xl font-extrabold">{subscription.price}</p>
+                <p className="text-sm text-gray-500 mb-4">{subscription.description}</p>
+                <ul className="text-sm text-gray-500 list-inside list-disc space-y-2 text-left p-4 border border-gray-300 rounded-lg">
+                  {subscription.features.map((feature, index) => (
+                    <li key={index} className="ml-2">{feature}</li>
+                  ))}
+                </ul>
+              </div>
               <button
                 className="mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-all"
                 onClick={() => handleSubscribe(subscription.type)}

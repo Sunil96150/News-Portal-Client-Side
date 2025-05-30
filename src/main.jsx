@@ -17,7 +17,7 @@ import ReadMore from './pages/ReadMore.jsx';
 import EditNews from './pages/EditNews.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import NewsStatistics from './pages/NewsStatistics.jsx';
-import SubscriptionOverview from './pages/SubscriptionOverview.jsx';
+import SubscriptionOverview from './pages/SubscriptionDashboard.jsx';
 import UserManagement from './pages/UserManagement.jsx';
 import AuthProvider from './pages/Provider/AuthProvider.jsx';
 import Login from './pages/LogIn.jsx';
